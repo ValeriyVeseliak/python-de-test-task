@@ -1,0 +1,17 @@
+migration_period: 10
+
+log_file_name: "/home/logs/migrator.log"
+
+source_table_credentials:
+  host: "maindb"
+  user: "mainuser"
+  password: "secret"
+  database: "main"
+  port: "5432"
+
+target_table_credentials:
+  host: "stabledb"
+  user: "stableuser"
+  password: "secret"
+  database: "stable"
+  port: "3306"

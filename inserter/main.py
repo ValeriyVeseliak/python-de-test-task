@@ -23,9 +23,10 @@ def main():
         except Exception as e:
             print(f'PostgreSQL does not seem to be ready yet: {e}')
             time.sleep(1)
-    print('Connected to PostgreSQL')
+    # print('Connected to PostgreSQL')
     while True:
-        time.sleep(random.random() / 5)
+        # time.sleep(random.random() / 5)
+        time.sleep(0)
         key = gen.slug()
         value = gen.sentence()
         pk = uuid.uuid1()
@@ -39,13 +40,14 @@ def main():
             )
         )
         conn.commit()
-        print('New event:')
-        print('  pk:', pk)
-        print('  key:', key)
-        print('  value:', value)
+        # print('New event:')
+        # print('  pk:', pk)
+        # print('  key:', key)
+        # print('  value:', value)
 
     return 0
 
 
 if __name__ == '__main__':
     sys.exit(main())
+

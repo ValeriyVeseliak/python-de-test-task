@@ -30,6 +30,22 @@ services:
       DB_PASSWORD: *main_password
       DB_NAME: main
 
+  migrator:
+    image: test-migrator
+    build:
+      context: migrator
+    environment:
+      PYTHONUNBUFFERED: 1
+    links:
+      - stabledb
+      - maindb
+    depends_on:
+      - stabledb
+      - maindb
+    ports:
+      - 5000:5000
+
 volumes:
   maindb:
   stabledb:
+
